@@ -1,4 +1,8 @@
+import fs from 'fs/promises';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config();
 
 const url = `http://localhost:${process.env.PORT || 3000}/`;
@@ -18,10 +22,6 @@ const execute = async () => {
 }
 
 //execute();
-
 (async () => {
-    console.log(await req('dyn', '1037_amiya3_sale#13'));
-    //console.log(await req('dyn', '391_rosmon'));
-    //console.log(await req('dyn', '1028_texas2'));
-    //console.log(await req('dyn', '2014_nian'));
+    
 })();

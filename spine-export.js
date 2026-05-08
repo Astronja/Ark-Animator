@@ -89,7 +89,7 @@ export default class SpineExport {
     static async baseSprite(assetDir) {
         let skel = "";
         if (await this.skelFilesInDir(assetDir)) skel = ".skel";
-        let skinId = assetDir.split("/").pop();
+        let skinId = assetDir.split("/").pop().replaceAll("build_char_", "");
         await this.runExport({
             skelFile: join(assetDir, `build_char_${skinId}${skel}`),
             atlasFile: join(assetDir, `build_char_${skinId}.atlas`),
